@@ -1,0 +1,16 @@
+import numpy as np
+from numpy import cos,sin,sqrt,newaxis,arctan2
+import matplotlib.pyplot as plt
+
+xs = np.linspace(-20,20,100)
+ys = np.linspace(-20,20,100)[:,np.newaxis]
+a_0 = 5.29*10**-11
+
+def psi(x,y):
+    r = sqrt(x**2+y**2)
+    return x*(6-r)*np.e**(-r/3)
+
+psis = psi(xs,ys)
+print(psis)
+plt.imshow(psis)
+plt.show()
